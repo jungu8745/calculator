@@ -53,7 +53,6 @@ public class App {
             results.add(result);
 
             System.out.println("결과 : " + result);
-            System.out.println("저장된 결과 : " + results);
 
             System.out.print("가장 오래된 계산 결과를 삭제하시겠습니까? (remove 입력): ");
             String removeCommand = sc.next();
@@ -69,6 +68,13 @@ public class App {
                 }
             }
 
+            System.out.print("저장된 계산 결과를 조회하시겠습니까? (check 입력): ");
+            String inquiryCommand = sc.next();
+
+            if (inquiryCommand.equals("check")) {
+                System.out.println("저장된 결과 : " + results);
+            }
+
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
             String answer = sc.next();
 
@@ -82,3 +88,6 @@ public class App {
 
     }
 }
+
+
+
