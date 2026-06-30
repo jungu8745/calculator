@@ -1,47 +1,43 @@
 public class ArithmeticCalculator extends Calculator {
 
-    public double calculate(double num1, double num2, char operator) {
+    private AddOperator addOperator;
+    private SubtractOperator subtractOperator;
+    private MultiplyOperator multiplyOperator;
+    private DivideOperator divideOperator;
 
-        double result = 0;
+    public ArithmeticCalculator() {
+        addOperator = new AddOperator();
+        subtractOperator = new SubtractOperator();
+        multiplyOperator = new MultiplyOperator();
+        divideOperator = new DivideOperator();
+    }
+
+    public double calculate(double num1, double num2, char operator) {
+        double result;
 
         switch(operator) {
 
             case '+':
-                result = num1 + num2;
-
+                result = addOperator.operate(num1, num2);
                 break;
 
             case '-':
-                result = num1 - num2;
-
+                result = subtractOperator.operate(num1, num2);
                 break;
 
             case '*':
-                result = num1 * num2;
-
+                result = multiplyOperator.operate(num1, num2);
                 break;
-
 
             case '/':
-
-                if(num2 == 0) {
-                    throw new ArithmeticException(
-                            "나눗셈에서 분모가 0이 될 수 없습니다.");
-                }
-                result = num1 / num2;
-
+                result = divideOperator.operate(num1, num2);
                 break;
 
-
             default:
-                throw new IllegalArgumentException(
-                        "잘못된 연산자입니다.");
-
+                throw new IllegalArgumentException("잘못된 연산자입니다.");
         }
 
-
         results.add(result);
-
 
         return result;
 

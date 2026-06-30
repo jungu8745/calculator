@@ -4,25 +4,20 @@ import java.util.List;
 
 public class Calculator {
 
-
     protected List<Double> results;
-
 
     public Calculator() {
         results = new ArrayList<>();
     }
 
-
     public List<Double> getResults() {
         return results;
     }
-
 
     public void setResults(List<Double> results) {
         this.results = results;
 
     }
-
 
     public void removeResult() {
         if (!results.isEmpty()) {
@@ -36,12 +31,8 @@ public class Calculator {
         }
     }
 
-
-
     public void inquiryResults() {
-
         System.out.println("저장된 결과 : " + results);
-
     }
 
 }

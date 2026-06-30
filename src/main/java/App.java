@@ -68,38 +68,20 @@ public class App {
                 System.out.println("원의 넓이 : " + area);
                 circleCalculator.inquiryResults();
 
-
             }
-
-
 
             else {
-
                 System.out.println("잘못된 입력입니다.");
-
             }
-
-
-
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
-
             String answer = sc.next();
 
-
-
             if (answer.equals("exit")) {
-
                 break;
-
             }
-
-
-
         }
-
         sc.close();
-
     }
 }
 
