@@ -9,7 +9,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        List<Integer> results = new ArrayList<>();
+        Calculator calculator = new Calculator();
 
         while (true) {
 
