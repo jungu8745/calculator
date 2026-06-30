@@ -25,5 +25,40 @@ public class Calculator {
         System.out.println("저장된 결과 : " + results);
     }
 
+    public int calculate(int num1, int num2, char operator) {
+
+        int result = 0;
+
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+
+            case '-':
+                result = num1 - num2;
+                break;
+
+            case '*':
+                result = num1 * num2;
+                break;
+
+            case '/':
+                if (num2 == 0) {
+                    throw new ArithmeticException("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
+                }
+                result = num1 / num2;
+                break;
+
+            default:
+                throw new IllegalArgumentException("잘못된 연산자입니다.");
+        }
+
+        addResult(result);
+
+        return result;
+    }
+
+
+
 
 }

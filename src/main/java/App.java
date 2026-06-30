@@ -20,51 +20,30 @@ public class App {
             int num2 = sc.nextInt();
 
             System.out.print("사칙연산 기호를 입력하세요: ");
+
             char operator = sc.next().charAt(0);
 
-            int result = 0;
 
-            switch (operator) {
-                case '+':
-                    result = num1 + num2;
-                    break;
-
-                case '-':
-                    result = num1 - num2;
-                    break;
-
-                case '*':
-                    result = num1 * num2;
-                    break;
-
-                case '/':
-                    if (num2 == 0) {
-                        System.out.println("나눗셈 연산에서 분모(두 번째 정수)에 0이 입력될 수 없습니다.");
-                        return;
-                    }
-                    result = num1 / num2;
-                    break;
-
-                default:
-                    System.out.println("잘못된 연산자입니다.");
-                    return;
+            try {
+                int result = calculator.calculate(num1, num2, operator);
+                System.out.println("결과 : " + result);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                continue;
             }
 
-            calculator.addResult(result);
 
-            System.out.println("결과 : " + result);
-
-            System.out.print("가장 오래된 계산 결과를 삭제하시겠습니까? (remove 입력): ");
+            System.out.print("가장 오래된 계산 결과를 삭제하시겠습니까? (remove 입력 시 삭제): ");
             String removeCommand = sc.next();
 
             if (removeCommand.equals("remove")) {
                 calculator.removeResult();
             }
 
-            System.out.print("저장된 계산 결과를 조회하시겠습니까? (check 입력): ");
+            System.out.print("저장된 계산 결과를 조회하시겠습니까? (inquiry 입력 시 조회): ");
             String inquiryCommand = sc.next();
 
-            if (inquiryCommand.equals("check")) {
+            if (inquiryCommand.equals("inquiry")) {
                 calculator.inquiryResults();
             }
 
