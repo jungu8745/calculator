@@ -53,7 +53,23 @@ public class App {
             results.add(result);
 
             System.out.println("결과 : " + result);
-            System.out.println("저장된 결과 : " + results)System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
+            System.out.println("저장된 결과 : " + results);
+
+            System.out.print("가장 오래된 계산 결과를 삭제하시겠습니까? (remove 입력): ");
+            String removeCommand = sc.next();
+
+            if (removeCommand.equals("remove")) {
+                if (!results.isEmpty()) {
+                    results.remove(0);
+                    System.out.println("가장 오래된 계산 결과가 삭제되었습니다.");
+                    System.out.println("저장된 결과 : " + results);
+                } else {
+                    System.out.println("삭제할 결과가 없습니다.");
+                    System.out.println("저장된 결과 : " + results);
+                }
+            }
+
+            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
             String answer = sc.next();
 
             if (answer.equals("exit")) {
