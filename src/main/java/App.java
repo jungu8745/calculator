@@ -50,7 +50,7 @@ public class App {
                     return;
             }
 
-            results.add(result);
+            calculator.addResult(result);
 
             System.out.println("결과 : " + result);
 
@@ -58,21 +58,14 @@ public class App {
             String removeCommand = sc.next();
 
             if (removeCommand.equals("remove")) {
-                if (!results.isEmpty()) {
-                    results.remove(0);
-                    System.out.println("가장 오래된 계산 결과가 삭제되었습니다.");
-                    System.out.println("저장된 결과 : " + results);
-                } else {
-                    System.out.println("삭제할 결과가 없습니다.");
-                    System.out.println("저장된 결과 : " + results);
-                }
+                calculator.removeResult();
             }
 
             System.out.print("저장된 계산 결과를 조회하시겠습니까? (check 입력): ");
             String inquiryCommand = sc.next();
 
             if (inquiryCommand.equals("check")) {
-                System.out.println("저장된 결과 : " + results);
+                calculator.inquiryResults();
             }
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
