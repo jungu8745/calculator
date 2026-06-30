@@ -5,8 +5,18 @@ public class Calculator {
 
     private List<Integer> results;
 
+    private List<Double> circleResults;
+
+
+    // static: 모든 객체가 공유하는 값으로 사용하기 위해 사용
+    // final: 원주율 값은 변경되지 않는 상수 값이므로 수정할 수 없도록 사용
+    public static final double PI = 3.14;
+
+
     public Calculator() {
         results = new ArrayList<>();
+
+        circleResults = new ArrayList<>();
     }
 
 
@@ -72,6 +82,46 @@ public class Calculator {
 
         return result;
     }
+
+
+    public double calculateCircleArea(double radius) {
+
+        double area = PI * radius * radius;
+
+
+        circleResults.add(area);
+
+
+        return area;
+
+    }
+
+
+
+    public List<Double> getCircleResults() {
+
+        return circleResults;
+
+    }
+
+
+
+    public void setCircleResults(List<Double> circleResults) {
+
+        this.circleResults = circleResults;
+
+    }
+
+
+
+    public void inquiryCircleResults() {
+
+        System.out.println("저장된 원 넓이 : " + circleResults);
+
+    }
+
+
+
 
 
 
