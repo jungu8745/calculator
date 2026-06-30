@@ -1,10 +1,15 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class App {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+
+        List<Integer> results = new ArrayList<>();
 
         while (true) {
 
@@ -44,8 +49,11 @@ public class App {
                     System.out.println("잘못된 연산자입니다.");
                     return;
             }
+
+            results.add(result);
+
             System.out.println("결과 : " + result);
-            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
+            System.out.println("저장된 결과 : " + results)System.out.print("더 계산하시겠습니까? (exit 입력 시 종료): ");
             String answer = sc.next();
 
             if (answer.equals("exit")) {
